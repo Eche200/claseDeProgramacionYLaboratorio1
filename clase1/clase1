@@ -1,2 +1,68 @@
 clase1:
+variables , se le pone  tipo de dato (int ,float, char ,double , void ) , luego el nombre  de la variable  y luego  el valor le podemos dar o sino terminar con ;  
+
+variables extenciones , long , short , etc 
+
+
+operadores aritmeticos + - * / %
+
+
+
+imprimir en pantalla en C e s printf("hola mundo");
+
+
+
+para concatenar o mas bien mostrar  una variable en una impresion , lo que usamos es %d o %i o %c %f o %s , etc dependiendo la variable  y  luego  cuando cerramos las " " , ponemos , y el nombre de la variable
+
+
+
+
+
+int valor;
+entrada  de  datos por  teclado :
+scanf("%i",&valor);
+
+les estoy pidiendo un int  por teclado que se asigna a la posicion de memoria donde  esta VALOR. el & lo que hace es decir  que lo que ingresa por teclado va a  la direccion  de  memoria  que   donde  esta   la varaible .
+
+
+(DATO: en un scanf se  puede poner valores tomar numero )
+
+
+como  definir  una  cadena de  caracteres  osea  un string   se  pone: char  texto[126]; 
+si queremos  50 caracteres , debemos poner 51 , porque el ultimo el 51 se va a usar para  el \0 que significa que  termino.
+
+
+a la hora de  tomar por teclado un STRING , debemos poner: sacanf("%s",texto);    osea que no usamos el &  (si quisiera  ingresar  a la primer elemento de esa cadena  ponemos  printf("%s",texto[0];
+
+
+
+
+
+
+siempre que hay 0 es  falso ,  todo lo que no sea  0 es verdadero .  
+
+
+
+
+funciones en C:
+
+es un conjunto  de codigo encerrado en  un lugar.  se puede reutilizar cuantas veces quiera.
+
+float calculoCuadrado(float x){
+
+	float calculo;
+	calculo=x*x;
+	return calculo;
+}
+
+
+
+
+
+
+
+
+
+
+
 
