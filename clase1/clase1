@@ -59,6 +59,11 @@ float calculoCuadrado(float x){
 
 
 
+prototipo , se  escribe  la primera linea d e la funcion , osea  tipo de dato , nombre y  parametro;   int suma(int a , int b);
+
+
+luego en cualquier  parte  del codigo ,desarrollo  la funcion .
+
 
 
 
