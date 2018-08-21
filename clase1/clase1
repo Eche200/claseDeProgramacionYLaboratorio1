@@ -67,6 +67,17 @@ luego en cualquier  parte  del codigo ,desarrollo  la funcion .
 
 
 
+reglas de estilo para TPS y EXAMENES:
+documentar la cabecera de las funciones.(no dentro).
+facil de leer.
+nombre de  varaibles debe  ser  claro de lo que va  hacer  y acorde con lo que hay que hacer.
+en nombres de  varaibles  se  usa  camelCase.
+identacion perfecta.
+nombres de las funciones va con camecase , y el nombre d ela funcion debe  dejar claro que  va  hacer la  funcion.
+el tamaño de los vectores , debe estar  declarado con una constante.
+
+
+
 
 
 
