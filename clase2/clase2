@@ -17,3 +17,15 @@ __fpurge(stdin);   esto es para vaciar el buffer lleno de basura . en windows  u
 
 
 
+si en una comparacion pongo & o && es lo mismo , solo que si pongo && y la primera proposicion esta mal , y ano ejecuta la otra , pero si pongo & evalua las 2 aunque no sea verdad la primero
+
+
+#DEFINE  son macros , no constantes , eso signifiica  que   todos lso lados donde  este  ese  macro escrito va a  cambiar automaticamente.
+
+
+
+
+EJ.
+pedir  5 numeros al usuarios y  sacar promedio .
+pedir numero , acumulo 
+hago promedio

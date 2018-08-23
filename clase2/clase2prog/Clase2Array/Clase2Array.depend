@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1535064666 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase2/clase2prog/Clase2Array/main.c
+	<stdio_ext.h>
+	<stdlib.h>
+
