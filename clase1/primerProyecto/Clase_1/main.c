@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 int main()
 {//3 5 2
@@ -8,33 +8,34 @@ int main()
     int  numeroMin;
     int numeroMax;
     printf("ingrese el primer numero: ");
-    scanf("%i",&numeroUno);
+    while(scanf("%i",&numeroUno)!=1){
+        printf("error, ingrese el primer numero: ");
+        __fpurge(stdin);
+    }
     numeroMin=numeroUno;
     numeroMax=numeroUno;
     printf("ingrese el segundo numero: ");
-    scanf("%i",&numeroDos);
+    while(scanf("%i",&numeroDos)!=1){
+        printf("error, ingrese el segundo numero: ");
+        __fpurge(stdin);
+    }
     if(numeroDos<numeroMin){
         numeroMin=numeroDos;
     }
     if(numeroDos>numeroMax){
         numeroMax=numeroDos;
     }
-
     printf("ingrese el tercer numero: ");
-    scanf("%i",&numeroTres);
-
+    while(scanf("%i",&numeroTres)!=1){
+        printf("error, ingrese el tercer numero: ");
+        __fpurge(stdin);
+    }
     if(numeroTres<numeroMin){
         numeroMin=numeroTres;
     }
     if(numeroTres>numeroMax){
         numeroMax=numeroTres;
     }
-
-
-    printf("\n%i",numeroMax);
-    printf("\n%i\n",numeroMin);
-
-
     if((numeroUno>=numeroMin && numeroUno<=numeroMax) ){
         printf("el %i es el numero del medio.",numeroUno);
     }else if((numeroDos>=numeroMin && numeroDos<=numeroMax)){

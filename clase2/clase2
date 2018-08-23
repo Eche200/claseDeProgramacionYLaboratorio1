@@ -1,2 +1,19 @@
 clase2:
+si quiero validar  que la persona ingreso algo que no  es un valor que yo queria (osea un string  cuando le pedi un int , tengo que poner  un if en el scanf) ejemplo : 
+
+int valor=999;
+
+if(scanf("%d",&valor){
+	printf("%d",valor);
+
+}
+
+esto nos cambio el valor de VALOR y  nos da  vacio. si yo no hago esto y le paso un HOLA por ejmeplo ,e vlaor de VALOR queda en lo mismo que estab antes.
+
+
+
+
+__fpurge(stdin);   esto es para vaciar el buffer lleno de basura . en windows  usamos fflush(stdin);
+
+
 
