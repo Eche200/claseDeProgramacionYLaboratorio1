@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1535067796 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase2/ejercicioClase2/EjercicioClase2Promedio/main.c
+	<stdio_ext.h>
+	<stdlib.h>
+
