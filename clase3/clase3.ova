@@ -1,0 +1,17 @@
+clase 3 funciones:
+
+si  yo  no creo  un  prototipo , el compilador  toma por default que lo que paso por patametro son  int.
+
+
+
+cuando llamamos  a una funcion pasa a ocupar un espacio de memoria(stack y es facil de desbordar).los parametros d e una  funcion son variables de la funcion nada mas. esas variables que estan en el stack osea  son LOCALES . desde otra funcion  no se puede entrar a la variable local de otra funcion , exepto que  sepamos el lugar de MEMORIA de esa variable (puntero). UNA variable GLOBAl , se declara  fuera del main  y todas las funciones la ven  y  esta en otra  zona  d e memoria que todos ven. si yo tengo una global llamada edad, y  dentro de  una  funcion tenemos una variable llamada edad  , predomina edad pero la que esta dentro de la funcion .  
+no puedo acceder desde otros archivos a la  variable global de otro archivo.
+cuando llamo a una funcion SE  RESERVA MEMORIA EN EL STACK!. cuando termina  la funcion , queda en el stack , pero otra funcion puede venir y ocupar ese espacio sin problema .
+las variables dentro de una funcion son temporales , duran hasta que la funcion termina. 
+
+
+
+
+
+
+
