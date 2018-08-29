@@ -15,18 +15,18 @@ int pedirEdad(){
     int minEdad;
     int maxEdad;
     do{
+        printf("ingrese el minimo de edad\n");
+        scanf("%d",&minEdad);
+        printf("ingrese el maximo de edad\n");
+        scanf("%d",&maxEdad);
+        system("clear");
+        printf("Error , ingrese un minimo  y un maximo valido.\n\n");
+    }while(minEdad<0 || maxEdad>100);
+    do{
         __fpurge(stdin);
         printf("Ingrese su edad. ");
     }while(scanf("%d",&edad)!=1);
-        do{
-            printf("ingrese el minimo de edad\n");
-            scanf("%d",&minEdad);
-            printf("ingrese el maximo de edad\n");
-            scanf("%d",&maxEdad);
-            system("clear");
-            printf("Error , ingrese un minimo  y un maximo valido.\n\n");
-        }while(minEdad<0 || maxEdad>100);
-        retorno=validarEdad(edad,minEdad,maxEdad);
+    retorno=validarEdad(edad,minEdad,maxEdad);
     return retorno ;
 }
 int validarEdad(int edad,int minEdad, int maxEdad){
