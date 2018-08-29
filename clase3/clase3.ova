@@ -6,8 +6,30 @@ si  yo  no creo  un  prototipo , el compilador  toma por default que lo que paso
 
 cuando llamamos  a una funcion pasa a ocupar un espacio de memoria(stack y es facil de desbordar).los parametros d e una  funcion son variables de la funcion nada mas. esas variables que estan en el stack osea  son LOCALES . desde otra funcion  no se puede entrar a la variable local de otra funcion , exepto que  sepamos el lugar de MEMORIA de esa variable (puntero). UNA variable GLOBAl , se declara  fuera del main  y todas las funciones la ven  y  esta en otra  zona  d e memoria que todos ven. si yo tengo una global llamada edad, y  dentro de  una  funcion tenemos una variable llamada edad  , predomina edad pero la que esta dentro de la funcion .  
 no puedo acceder desde otros archivos a la  variable global de otro archivo.
-cuando llamo a una funcion SE  RESERVA MEMORIA EN EL STACK!. cuando termina  la funcion , queda en el stack , pero otra funcion puede venir y ocupar ese espacio sin problema .
-las variables dentro de una funcion son temporales , duran hasta que la funcion termina. 
+cuando llamo a una funcion las variables SE  RESERVA MEMORIA EN EL STACK!. cuando termina  la funcion las variables , queda en el stack , pero otra funcion puede venir y ocupar ese espacio sin problema .
+las variables dentro de una funcion son temporales , duran hasta que la funcion termina.
+existen formas para que las funciones  puedan declarar  variables que duren y no se destruyen, esto pasa porque se reservan en otro tipo  de memoria.
+
+
+
+
+
+
+
+
+
+el * en un puntero  se llama  operador de indireccion
+
+int edad;
+int* pEdad;
+edad=5;
+pEdad=&edad;// almacena la direccion de memoria de edad
+*pEdad=8;// cambia el valor que  se  encuentra en la direccion de memoria en edad.
+printf("%d",edad);
+printf("%d",*pEdad);// apunta al valor que esta en la direccion de memoria  almacenada en pEdad
+
+
+ 
 
 
 
