@@ -1,7 +1,7 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
 int getNumero(int* pResultado,char* mensaje,char* mensajeError,int minimo,int maximo,int reintentos);
-
+int validarInt(int auxNumero,int min, int max);
 int main()
 {
     int numero;
@@ -17,7 +17,7 @@ int getNumero(int* pResultado,char* mensaje,char* mensajeError,int minimo,int ma
     do{
         __fpurge(stdin);
         printf("%s \n",mensaje);
-        if(scanf("%d",&auxNumero)!=1 || *pResultado<minimo || *pResultado>maximo ){
+        if(scanf("%d",&auxNumero)!=1 || validarInt(auxNumero,minimo,maximo)!=0){
             system("clear");
             printf("%s\n",mensajeError);
             reintentos--;
@@ -33,11 +33,10 @@ int getNumero(int* pResultado,char* mensaje,char* mensajeError,int minimo,int ma
     }while(reintentos>0);
     return retorno;
 }
-
 int validarInt(int auxNumero,int min , int max){
-
-
-
-
-
+    int retorno=0;
+    if(auxNumero<min || auxNumero>max){
+        retorno=1;
+    }
+    return retorno;
 }
