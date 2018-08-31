@@ -1,5 +1,14 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
+
+
+/**
+*\brief le paso por parametro un  numero que tome con la funcion getNumero y verifico si es un numero valido.
+*\param auxNumero , es el numero a evaluar si es correcto.
+*\param min , es el numero minimo que aceptamos como parametro
+*\param max , es el numero maximo que  acpetamos como parametro
+*\return retorna 0 si esta todo bien , -1 si hubo error
+*/
 int utn_validarInt(int auxNumero,int min , int max){
     int retorno=0;
     if(auxNumero<min || auxNumero>max){
@@ -7,6 +16,16 @@ int utn_validarInt(int auxNumero,int min , int max){
     }
     return retorno;
 }
+/**
+*\brief toma un numero , verifica si es un numero y si es valido , si no es valido  tiene 3 intentos  y sale de la funcion.
+*\param pResultado , es un puntero a una variable .
+*\param mensaje, mensaje para  indicar que debe ingresar  un numero.
+*\param mensajeError , es el mensaje  que aparece i hay un error.
+*\param minimo, es el  minimo numero que vamos a permitir que se lo pasaremos a la funcion validarNumero.
+*\param max , es el  maximo numero que vamos a permitir que se lo pasaremos a la funcion validarNumero.
+*\param reintentos , es  el numero de intentos que va a tener  el usuario para equivocarnos.
+*\return retorna 0 si esta todo bien , -1 si hubo error.
+*/
 int utn_getNumero(int* pResultado,char* mensaje,char* mensajeError,int minimo,int maximo,int reintentos){
     int retorno=0;
     int auxNumero;
