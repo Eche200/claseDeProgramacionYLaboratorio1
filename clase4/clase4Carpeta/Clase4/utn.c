@@ -48,11 +48,13 @@ int utn_getNumero(int* pResultado,char* mensaje,char* mensajeError,int minimo,in
     }while(reintentos>0);
     return retorno;
 }
-
-
-//getChar , getFloat
-
-
+/**
+*\brief le paso por parametro una  letra que tome con la funcion getLetra y verifico si es una letra valido.
+*\param auxLetra , es la letra a evaluar si es correcta.
+*\param min , es la letra minima que aceptamos como parametro
+*\param max , es la letra maxima que  acpetamos como parametro
+*\return retorna 0 si esta todo bien , -1 si hubo error
+*/
 int utn_validarChar(char auxDeLetra,char min , char max){
     int retorno=0;
     if(auxDeLetra<min || auxDeLetra>max){
@@ -60,7 +62,16 @@ int utn_validarChar(char auxDeLetra,char min , char max){
     }
     return retorno;
 }
-
+/**
+*\brief toma una letra , verifica si es una letra y si es valida , si no es valida tiene 3 intentos  y sale de la funcion.
+*\param pLetra , es un puntero a una variable . //seguir aca
+*\param mensaje, mensaje para  indicar que debe ingresar  un numero.
+*\param mensajeError , es el mensaje  que aparece i hay un error.
+*\param minimo, es el  minimo numero que vamos a permitir que se lo pasaremos a la funcion validarNumero.
+*\param max , es el  maximo numero que vamos a permitir que se lo pasaremos a la funcion validarNumero.
+*\param reintentos , es  el numero de intentos que va a tener  el usuario para equivocarnos.
+*\return retorna 0 si esta todo bien , -1 si hubo error.
+*/
 int utn_getChar(char* pLetra,char* mensaje,char* mensajeError,char minimo,char maximo,int reintentos){
     int retorno=0;
     char auxDeLetra;
