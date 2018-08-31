@@ -100,14 +100,14 @@ int utn_getFloat(float* pNumeroFlotante,char* mensaje,char* mensajeError,float m
 }
 
 static int getInt(int* numeroIngresado){
-    return scanf("%d",&numeroIngresado);
+    return scanf("%d",numeroIngresado);
 }
 static int getChar(char* letraIngresada){
-    return scanf("%c",&letraIngresada);
+    return scanf("%c",letraIngresada);
 }
 
 static int getFloat(float* numeroConComaIngresado){
-    return scanf("%f",&numeroConComaIngresado);
+    return scanf("%f",numeroConComaIngresado);
 }
 
 static int getString(char* stringIngresado){
