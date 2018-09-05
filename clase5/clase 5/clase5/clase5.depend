@@ -1,9 +1,14 @@
 # depslib dependency file v1.0
-1536098593 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase5/clase 5/clase5/utn_funciones.c
+1536110191 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase5/clase 5/clase5/utn_funciones.c
 	<stdio_ext.h>
 	<stdlib.h>
+	<string.h>
 
-1536105468 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase5/clase 5/clase5/main.c
+1536109411 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase5/clase 5/clase5/main.c
 	<stdio_ext.h>
 	<stdlib.h>
+	<string.h>
+	"utn_funciones.h"
+
+1536110199 /home/alumno/claseDeProgramacionYLaboratorio1/clase5/clase 5/clase5/utn_funciones.h
 
