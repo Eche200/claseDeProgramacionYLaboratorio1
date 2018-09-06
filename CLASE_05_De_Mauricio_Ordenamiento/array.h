@@ -1,7 +1,7 @@
 #ifndef ARRAY_H_INCLUDED
 #define ARRAY_H_INCLUDED
 
-#define CANTIDAD_EMPLEADOS 5
+#define CANTIDAD_EMPLEADOS 6
 #define DATO_INVALIDO -1
 #define false 0
 #define true 1

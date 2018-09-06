@@ -70,5 +70,19 @@ int array_initArray(int* pArray, int limite, int valor)
 }
 
 
+int array_ordenamiento(int* pArray, int* pMinimo, int limite, int orden){
+    int retorno=-1;
+    int j;
+    int auxiliarMinimo;
+    int indiceDelMinimo;
+    if(pArray!= NULL && limite>=desde && pMinimo!= NULL ){
+        for(j=0;j<limite;j++){
 
+            //buscar minimo valor y indice
+
+        }
+        retorno=0;
+    }
+    return retorno;
+}
 

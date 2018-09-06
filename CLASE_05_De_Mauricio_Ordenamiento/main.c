@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include "utn.h"
 #include "array.h"
-#define CANTIDAD_EMPLEADOS 5
+#define CANTIDAD_EMPLEADOS 6
 int main()
 {
-    int edades[CANTIDAD_EMPLEADOS];
-    int i;
+    int edades[CANTIDAD_EMPLEADOS]={2,3,6,8,7};
+   /* int i;
 
     for(i=0;i < CANTIDAD_EMPLEADOS;i++)
     {
@@ -14,7 +14,7 @@ int main()
         {
             edades[i] = DATO_INVALIDO;
         }
-    }
+    }*/
 
     array_mostrarArray(edades,CANTIDAD_EMPLEADOS);
 
