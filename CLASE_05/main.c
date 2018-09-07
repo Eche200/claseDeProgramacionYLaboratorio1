@@ -12,7 +12,7 @@ int main()
 
    /* int edades[CANTIDAD_EMPLEADOS] = {50,10,30,1,10,22};
 
-/*
+
     int i;
     for(i=0;i < CANTIDAD_EMPLEADOS;i++)
     {
@@ -29,13 +29,14 @@ int main()
 
     //nunca vamos a  usar strcpy();
     //strncpy(); nos va a pedir , el destino , el origen , y la cantidad de caracteres
-    char nombre[81];
+    char nombre[4];
     char buffer[4097];
     int cantidad;
     scanf("%s", buffer);
     cantidad=strlen(buffer);
 
-    strncpy(nombre,buffer,cantidad);
+    strncpy(nombre,buffer,4);
+    printf("%s",nombre);
 
     return 0;
 }
