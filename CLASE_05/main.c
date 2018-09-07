@@ -38,6 +38,13 @@ int main()
     strncpy(nombre,buffer,4);
     printf("%s",nombre);
 
+
+
+
+    /* hacer funciones que tomen numeros  , fotantes , enteros etc  y los conbierta  en   su valor, obvio voy a tomar en String
+
+
+*/
     return 0;
 }
 
