@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "utn.h"
 #include "array.h"
 
@@ -7,7 +8,9 @@
 
 int main()
 {
-    int edades[CANTIDAD_EMPLEADOS] = {50,10,30,1,10,22};
+
+
+   /* int edades[CANTIDAD_EMPLEADOS] = {50,10,30,1,10,22};
 
 /*
     int i;
@@ -18,9 +21,22 @@ int main()
             edades[i] = DATO_INVALIDO;
         }
     }
-*/
+
     array_ordenar(edades,CANTIDAD_EMPLEADOS,0);
     array_mostrar(edades,CANTIDAD_EMPLEADOS);
+*/
+
+
+    //nunca vamos a  usar strcpy();
+    //strncpy(); nos va a pedir , el destino , el origen , y la cantidad de caracteres
+    char nombre[81];
+    char buffer[4097];
+    int cantidad;
+    scanf("%s", buffer);
+    cantidad=strlen(buffer);
+
+    strncpy(nombre,buffer,cantidad);
+
     return 0;
 }
 

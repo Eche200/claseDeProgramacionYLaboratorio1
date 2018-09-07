@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "array.h"
 
 int array_mostrar(int* pArray, int limite)
@@ -165,11 +166,6 @@ int array_ordenamiento2(  int* pArray, int limite,
     }
     return retorno;
 }
-
-
-
-
-
 int array_swap(int* elementoUno,int* elementoDos){
 
 
@@ -181,11 +177,3 @@ int array_swap(int* elementoUno,int* elementoDos){
 
     return 0;
 }
-
-
-
-
-
-
-
-
