@@ -68,21 +68,54 @@ int array_initArray(int* pArray, int limite, int valor)
     }
     return retorno;
 }
-
-
-int array_ordenamiento(int* pArray, int* pMinimo, int limite, int orden){
+/*
+int array_minimoDesde(int pArray[],int limite,int desde,int* pMinimo){
     int retorno=-1;
-    int j;
-    int auxiliarMinimo;
-    int indiceDelMinimo;
-    if(pArray!= NULL && limite>=desde && pMinimo!= NULL ){
-        for(j=0;j<limite;j++){
+    int i;
+    int auxValorMin;
+    int auxInidiceMin;
 
-            //buscar minimo valor y indice
+    if(*pArray != NULL && limite > 0 && limite >=desde && pMinimo != NULL){
 
+        for(i=desde;i<limite;i++){
+
+            if(i==desde || *pArray[i] < auxMinimo){
+                auxValorMin=*pArray[i];
+                auxInidiceMin=i;
+            }
         }
-        retorno=0;
+        retorno=auxInidiceMin;
     }
     return retorno;
 }
+*/
 
+int array_ordenarMenorAMayor(int* pArray, int* pMinimo, int desde, int limite, int orden){
+    int retorno=-1;
+    int j;
+    int i;
+    int auxActual;
+    int auxMinimo;
+    if(pArray != NULL && limite > 0 && limite>=desde && pMinimo != NULL ){
+        for(i=desde;i<limite;i++){
+
+
+            auxActual=pArray[i];
+            for(j=0;j>=0 && j<=limite;j++){
+                if(j<auxActual){
+                    auxMinimo=pArray[j];
+                    pArray[i]=auxMinimo;
+                    pArray[j]=auxActual;
+                }
+            }
+        }
+        retorno=0;
+    }
+
+    for(i=0;i<limite;i++){
+
+        printf("%d",pArray[i]);
+
+    }
+    return retorno;
+}

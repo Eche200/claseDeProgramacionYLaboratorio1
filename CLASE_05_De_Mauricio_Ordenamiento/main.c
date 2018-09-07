@@ -16,8 +16,8 @@ int main()
         }
     }*/
 
-    array_mostrarArray(edades,CANTIDAD_EMPLEADOS);
-
+   // array_mostrarArray(edades,CANTIDAD_EMPLEADOS);
+    array_ordenarMenorAMayor(edades,0,0,CANTIDAD_EMPLEADOS,1);
 
     return 0;
 }
