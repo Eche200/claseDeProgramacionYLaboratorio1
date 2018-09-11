@@ -10,26 +10,26 @@ int main()
 
 
 
-    char usuario[10];
-    char clave[10];
-    char auxUsuario[10]="admin\n";
-    char auxClave[10]="admin\n";
+    char usuario[6];
+    char clave[6];
+    char auxUsuario[]="admin\n";
+    char auxClave[]="admin\n";
 
-    fgets(usuario,10,stdin);
+    fgets(usuario,6,stdin);
     __fpurge(stdin);
-    fgets(clave,10,stdin);
+    fgets(clave,6,stdin);
     __fpurge(stdin);
 
+    int aux=strlen(usuario);
+    printf("%d", aux);
+/*
     if(strcmp(usuario , auxUsuario)==0  && strcmp(clave,auxClave)==0 ){
-
         printf("correcto bienvenido");
-
-
     }
     else{
         printf("incrrecto chau");
     }
-
+*/
 
 /*
     char nombre[5];
