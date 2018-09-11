@@ -13,9 +13,9 @@ int main()
     mostrarListado(listadoDeNotas,CANTIDAD);
     mostrarInformacionDeLaArray(listadoDeNotas,CANTIDAD);*/
 
-    char palabra[]= "23134";
-    int arrayConvertidoAint=0;
-    printf("%d",getInt(palabra ,&arrayConvertidoAint));
-    printf("\n %d",arrayConvertidoAint );
+    char palabra[]= "em//";
+    //int arrayConvertidoAint=0;
+    printf("\n %d",getOnlyLetters(palabra));
+   // printf("\n %d",arrayConvertidoAint );
     return 0;
 }

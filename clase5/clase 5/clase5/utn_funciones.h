@@ -9,4 +9,5 @@ char * evaluarDesempeno(int listadoDeNotas[], int tamano);
 void mostrarInformacionDeLaArray(int listadoDeNotas[],int tamano);
 
 
-int getInt (char* palabra, int* arrayConvertidoAint);
+int getOnlyInt (char* palabra, int* arrayConvertidoAint);
+int getOnlyLetters (char* palabra );

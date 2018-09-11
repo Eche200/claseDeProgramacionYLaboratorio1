@@ -95,7 +95,7 @@ char * evaluarDesempeno(int listadoDeNotas[], int tamano){
 
 
 
-int getInt (char* palabra , int* arrayConvertidoAint){
+int getOnlyInt (char* palabra , int* arrayConvertidoAint){
     int retorno=0;
     char auxPalabra[100];
     int i;
@@ -116,3 +116,27 @@ int getInt (char* palabra , int* arrayConvertidoAint){
     return retorno;
 }
 
+
+
+int getOnlyLetters (char* palabra ){
+    int retorno=0;
+    int i;
+    int largo= strlen(palabra);
+    for(i=0; i <= largo-1 ; i++ ) {
+        if((palabra[i]>='0' && palabra[i]<='9')){
+            retorno=1;
+            printf("no son solo letras , hay numeros en estos caracteres.");
+            break;
+        }else if ((palabra[i]>='a' && palabra[i]<='z') || (palabra[i]>='A' && palabra[i]<='Z')){
+            if(i == largo-1){
+                printf("todos son caracteres.\n");
+            }
+        }
+        else{
+            retorno=1;
+            printf("no son solo letras, hay numeros en estos caracteres.");
+            break;
+        }
+    }
+    return retorno;
+}
