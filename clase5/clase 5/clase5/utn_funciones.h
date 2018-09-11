@@ -7,3 +7,6 @@ int cantidadDePares(int listadoDeNotas[], int tamano);
 void mostrarListado(int listadoDeNotas[], int tamano);
 char * evaluarDesempeno(int listadoDeNotas[], int tamano);
 void mostrarInformacionDeLaArray(int listadoDeNotas[],int tamano);
+
+
+int getInt (char* palabra, int* arrayConvertidoAint);

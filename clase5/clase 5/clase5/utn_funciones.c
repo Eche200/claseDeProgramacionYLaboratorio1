@@ -64,7 +64,7 @@ void mostrarListado(int listadoDeNotas[], int tamano){
     printf("\nLa cantidad de pares es de %d", cantidadDePares(listadoDeNotas,tamano));
     printf("\nLa suma de todas las notas es %d", retornarTotal(listadoDeNotas,tamano));
     printf("\nEl promedio es %d", retornarPromedio(listadoDeNotas,tamano));
-}
+}/*
 char * evaluarDesempeno(int listadoDeNotas[], int tamano){
     int aprobado=0;
     int desaprobado=0;
@@ -80,11 +80,39 @@ char * evaluarDesempeno(int listadoDeNotas[], int tamano){
             desaprobado++;
         }
     }
-    strcpy(retorno,"%d alumnos aprobaron , %d  alumnos se van a final y %d alumnos desaprobaron.",aprobado,desaprobado,seVaAFinal);/*
+    strcpy(retorno,"%d alumnos aprobaron , %d  alumnos se van a final y %d alumnos desaprobaron.",aprobado,desaprobado,seVaAFinal);
     retorno=;
-*/
+
     return *retorno;
-}
+}*/
+
 
 
 //apbado6 a 10 , desaprobado 1 a 3, final 4 a 5
+
+
+
+
+
+
+int getInt (char* palabra , int* arrayConvertidoAint){
+    int retorno=0;
+    char auxPalabra[100];
+    int i;
+    strcpy(auxPalabra , palabra);
+    int largo= strlen(auxPalabra);
+    for(i=0; i <= largo-1 ; i++ ) {
+        if((auxPalabra[i]>='a' && auxPalabra[i]<='z')||(auxPalabra[i]>='A' && auxPalabra[i]<='Z')){
+            retorno=1;
+            printf("no son numeros, hay letras en estos caracteres.");
+            break;
+        }else{
+            if(i == largo-1){
+                printf("todos son caracteres, se pudo  transformar la cadena correctamente \n");
+                *arrayConvertidoAint=atoi(auxPalabra);
+            }
+        }
+    }
+    return retorno;
+}
+
