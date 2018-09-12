@@ -1,19 +1,24 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
+#include "funciones.h"
 //sizeof lo que hace es dar la cantidad de bite que ocupa la variable , el SRTLEN es  la cantidad de caracteres que tiene.
 //son diferentes
 
 
 int main()
 {
+    char nombre[26];
+
+    getOnlyLetters(getChar(nombre));
 
 
+/*
 
     char usuario[6];
     char clave[6];
-    char auxUsuario[]="admin\n";
-    char auxClave[]="admin\n";
+   // char auxUsuario[]="admin\n";
+   // char auxClave[]="admin\n";
 
     fgets(usuario,6,stdin);
     __fpurge(stdin);
@@ -22,7 +27,7 @@ int main()
 
     int aux=strlen(usuario);
     printf("%d", aux);
-/*
+
     if(strcmp(usuario , auxUsuario)==0  && strcmp(clave,auxClave)==0 ){
         printf("correcto bienvenido");
     }
