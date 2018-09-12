@@ -53,10 +53,11 @@ char* getChar(char* nombre){
     int i;
     fgets(auxNombre,26,stdin);
     for(i=0 ; i < strlen(auxNombre) -1 ; i++){
-        if(strcmp(auxNombre,"\n")==0 ||strcmp(auxNombre,"\0")==0){
+        if(auxNombre[i] =='\n' || auxNombre[i] =='\0'){
             strcpy(nombre,auxNombre);
             break;
         }
     }
+
     return nombre;
 }
