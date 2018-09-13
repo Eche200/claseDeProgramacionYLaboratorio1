@@ -73,11 +73,12 @@
 	<string.h>
 	"utn.h"
 
-1536878509 /home/alumno/claseDeProgramacionYLaboratorio1/Clase08_init/utn.h
+1536879486 /home/alumno/claseDeProgramacionYLaboratorio1/Clase08_init/utn.h
 
-1536878756 source:/home/alumno/claseDeProgramacionYLaboratorio1/Clase08_init/utn.c
+1536881577 source:/home/alumno/claseDeProgramacionYLaboratorio1/Clase08_init/utn.c
 	<stdio_ext.h>
 	<string.h>
 	<stdlib.h>
+	<ctype.h>
 	"utn.h"
 

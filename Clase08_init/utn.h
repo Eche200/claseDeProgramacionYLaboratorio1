@@ -1,7 +1,7 @@
 #ifndef UTN_H_INCLUDED
 #define UTN_H_INCLUDED
 
-int isValidNombre(char* pBuffer);
+int isValidNombre(char* pBuffer , int limite);
 
 int getString(char* pBuffer, int limite);
 
