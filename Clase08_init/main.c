@@ -8,11 +8,18 @@
 
 int main()
 {
-    char nombres[15][50];
+    char nombres[CANTIDAD_EMPLEADOS][50];
     int i;
 
     for(i=0;i < CANTIDAD_EMPLEADOS;i++)
     {
+        utn_getNombre(nombres[i],50,"\nnombre: ","\nnombre incorrecto",2);
+
+    }
+
+    for(i=0;i < CANTIDAD_EMPLEADOS;i++)
+    {
+        printf("\n%s",nombres[i]);
 
     }
 
