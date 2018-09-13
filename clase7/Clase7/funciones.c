@@ -52,9 +52,13 @@ char* getChar(char* nombre){
     char auxNombre[26];
     int i;
     fgets(auxNombre,26,stdin);
-    for(i=0 ; i < strlen(auxNombre) -1 ; i++){
-        if(auxNombre[i] =='\n' || auxNombre[i] =='\0'){
-            strcpy(nombre,auxNombre);
+    int largo=strlen(auxNombre);
+    char auxDeAuxNombre[largo];
+    strcpy(auxDeAuxNombre,auxNombre);
+    for(i=0 ; i < largo-1 ; i++){
+        if(auxDeAuxNombre[i] >= 'a' && auxDeAuxNombre[i] <= 'z'){
+
+            strcpy(nombre,auxDeAuxNombre);
             break;
         }
     }
