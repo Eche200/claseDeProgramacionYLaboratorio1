@@ -16,13 +16,12 @@ struct sEmpleado{
 typedef struct sEmpleado Empleado;
 /*
 es lo mismo que lo que hicimos arriba
+
 typedef struct sEmpleado{
     char nombre[51];
     char apellido[51];
     float salario;
 }Empleado;
-
-
 */
 
 
