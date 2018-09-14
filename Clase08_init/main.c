@@ -5,6 +5,27 @@
 
 
 #define CANTIDAD_EMPLEADOS 3
+
+struct sEmpleado{
+    char nombre[51];
+    char apellido[51];
+    float salario;
+};
+//typedef lo que hace  es poder  cambiarle el nombre de  un struct existente , darle otro nombre.
+
+typedef struct sEmpleado Empleado;
+/*
+es lo mismo que lo que hicimos arriba
+typedef struct sEmpleado{
+    char nombre[51];
+    char apellido[51];
+    float salario;
+}Empleado;
+
+
+*/
+
+
 void ordenarPorNombre(char pNombres[][50], char pApellidos[][50], char pDni[][50],int limite);
 int main()
 {
