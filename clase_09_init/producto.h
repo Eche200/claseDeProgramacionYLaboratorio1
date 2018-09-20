@@ -3,4 +3,15 @@
 
 
 
+
+typedef struct sProductos{
+
+    char nombre[100];
+
+
+
+}
+
+
+
 #endif
