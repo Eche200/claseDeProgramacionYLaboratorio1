@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1538090036 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Contrataciones.c
+	<stdio_ext.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"Funciones.h"
+	"Pantallas.h"
+	"Contrataciones.h"
+
+1538090413 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/main.c
+	<stdio.h>
+	<stdlib.h>
+	"Pantallas.h"
+	"Contrataciones.h"
+	"Funciones.h"
+
+1538090173 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Funciones.c
+	<stdio_ext.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"Funciones.h"
+	"Pantallas.h"
+	"Contrataciones.h"
+
+1538090433 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Pantallas.c
+	<stdio_ext.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	"Contrataciones.h"
+	"Funciones.h"
+	"Pantallas.h"
+
+1538087736 /home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Funciones.h
+
+1538088015 /home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Pantallas.h
+
+1538086841 /home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Contrataciones.h
+
