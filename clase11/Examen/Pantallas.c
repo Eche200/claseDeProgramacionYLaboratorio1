@@ -16,6 +16,8 @@ int altaDePantalla (pantalla sPantalla[])
 
         utn_getString(sPantalla[0].nombreDeLaPantalla,100);
 
+
+
     }
 
 
@@ -39,3 +41,18 @@ int idPantallaAutoIncrementa()
     return idPantallaIncrementa;
 
 }
+
+
+
+
+
+
+
+
+
+
+/*
+validaciones
+
+ordenar por X factor , ordenar de mayor a menor o menor a mayor
+*/

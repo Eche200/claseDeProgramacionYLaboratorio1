@@ -8,14 +8,14 @@
 	"Pantallas.h"
 	"Contrataciones.h"
 
-1538090413 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/main.c
+1538094193 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/main.c
 	<stdio.h>
 	<stdlib.h>
 	"Pantallas.h"
 	"Contrataciones.h"
 	"Funciones.h"
 
-1538090173 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Funciones.c
+1538091079 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Funciones.c
 	<stdio_ext.h>
 	<string.h>
 	<stdlib.h>
@@ -24,7 +24,7 @@
 	"Pantallas.h"
 	"Contrataciones.h"
 
-1538090433 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Pantallas.c
+1538094139 source:/home/alumno/claseDeProgramacionYLaboratorio1/clase11/Examen/Pantallas.c
 	<stdio_ext.h>
 	<string.h>
 	<stdlib.h>

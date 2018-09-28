@@ -10,6 +10,8 @@ int main()
     pantalla sPantallas[100];
 
 
+
+
     altaDePantalla(sPantallas);
 
     printf(sPantallas[0].nombreDeLaPantalla);
