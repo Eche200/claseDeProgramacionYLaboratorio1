@@ -1,5 +1,6 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "UTN_empleados.h"
 #include "Funciones.h"
 //funcion para señalar indices.

@@ -1,6 +1,7 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "UTN_empleados.h"
 #include "Funciones.h"
 
@@ -173,16 +174,94 @@ int utn_isValidInt(char* pBuffer , int limite)
 
 int utn_isValidFloat(char* pBuffer , int limite)
 {
-    int retorno=0;
+    int retorno = 0;
     int i;
-    if(pBuffer != NULL && limite > 0){
+    int contadorDeComas = 0;
+    if(pBuffer != NULL && limite > 0)
+    {
         retorno=1;
-        for( i = 0 ; i < limite && pBuffer[i] != '\0'; i++){
-            if(pBuffer[i] < '0' || pBuffer[i] > '9'){
-                retorno=0;
+        for( i = 0 ; i < limite && pBuffer[i] != '\0'; i++)
+        {
+            if(pBuffer[i] < '0' || pBuffer[i] > '9' || pBuffer[i] != ',')
+            {
+                retorno = 0;
                 break;
             }
+            else if( pBuffer[i] == ',')
+            {
+                contadorDeComas++;
+                if(contadorDeComas > 1 )
+                {
+                    retorno = 0;
+                    break;
+                }
+            }
+        }
+        if(contadorDeComas < 1)
+        {
+            retorno = 0;
         }
     }
     return retorno;
 }
+
+
+
+int utn_getInt(  int* pEntero,int tamano, char* msg,
+                    char* msgErr, int reintentos)
+
+{
+    int retorno=-1;
+
+    char bufferInt[4900];
+    if(pEntero != NULL && msg != NULL && msgErr != NULL && tamano > 0 && reintentos >=0)
+    {
+        do
+        {
+            reintentos--;
+            printf("%s",msg);
+            if(utn_getString(bufferInt,tamano)==0 && utn_isValidInt(bufferInt , tamano)==1)
+            {
+                *pEntero = atoi(bufferInt);
+                retorno=0;
+                break;
+            }else
+            {
+                printf("%s",msgErr);
+            }
+        }while(reintentos>0);
+    }
+    return retorno;
+}
+
+
+
+
+int utn_getFloat(  float* pFloat,int tamano, char* msg,
+                    char* msgErr, int reintentos)
+
+{
+    int retorno=-1;
+
+    char bufferFloat[4900];
+    if(pFloat != NULL && msg != NULL && msgErr != NULL && tamano > 0 && reintentos >=0)
+    {
+        do
+        {
+            reintentos--;
+            printf("%s",msg);
+            if(utn_getString(bufferFloat,tamano)==0 && utn_isValidInt(bufferFloat , tamano)==1)
+            {
+                *pFloat = atof(bufferFloat);
+                retorno=0;
+                break;
+            }else
+            {
+                printf("%s",msgErr);
+            }
+        }while(reintentos>0);
+    }
+    return retorno;
+}
+
+
