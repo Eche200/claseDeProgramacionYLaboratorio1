@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "UTN_empleados.h"
+#include "UTN_ArrayEmployees.h"
 #include "Funciones.h"
 
 /*
@@ -11,7 +11,7 @@ luego pos es para  guardar la posicion actual , y aux para guardar el numero may
 y hacer el intercambio
 */
 
-int Func_ordenamientoPorInsercionParaInt(Empleado arrayDeEmpleados[], int limite ,int indice)
+int Func_ordenamientoPorInsercionParaInt(Employee arrayDeEmployee[], int limite ,int indice)
 {
     int retorno = -1;
     int i;
@@ -22,36 +22,36 @@ int Func_ordenamientoPorInsercionParaInt(Empleado arrayDeEmpleados[], int limite
         //guardamos la posicion en i la que estamos actualmente
         posicion = i;
         //guardamos el elemento que esta en es posicion. sea int o char o lo que sea
-        auxDeid = arrayDeEmpleados[i].id;
+        auxDeid = arrayDeEmployee[i].id;
         // si el numero (en este caso) actual es menor al de su izquierda , se cambia
         // si la posicion es mayor a 0 tambien , entonces se crea el intercambio.
-        while(posicion > 0 && auxDeid < arrayDeEmpleados[posicion - 1].id)
+        while(posicion > 0 && auxDeid < arrayDeEmployee[posicion - 1].id)
         {
-            arrayDeEmpleados[posicion].id = arrayDeEmpleados[posicion - 1].id;
+            arrayDeEmployee[posicion].id = arrayDeEmployee[posicion - 1].id;
             posicion--;
         }
-        arrayDeEmpleados[posicion].id = auxDeid;
+        arrayDeEmployee[posicion].id = auxDeid;
     }
     return retorno;
 }
 
 
-int Func_ordenamientoPorInsercionParaChar(Empleado arrayDeEmpleados[], int limite , int indice)
+int Func_ordenamientoPorInsercionParaChar(Employee arrayDeEmployee[], int limite , int indice)
 {
     int retorno = 0;
     int i;
-    char auxDeNombreDelEmpleado[51];
+    char auxDeNombreDelEmployee[51];
     int posicion;
     for ( i = indice ; i < limite ; i++)
     {
         posicion = i;
-        strncpy(auxDeNombreDelEmpleado , arrayDeEmpleados[i].nombre , CANTIADDECARACTERESMAXIMOSPARANOMBRE);
-        while( i > 0 && strcmp(auxDeNombreDelEmpleado , arrayDeEmpleados[posicion - 1].nombre)<0)
+        strncpy(auxDeNombreDelEmployee , arrayDeEmployee[i].nombre , CANTIADDECARACTERESMAXIMOSPARANOMBRE);
+        while( i > 0 && strcmp(auxDeNombreDelEmployee, arrayDeEmployee[posicion - 1].nombre)<0)
         {
-            strncpy(arrayDeEmpleados[posicion].nombre , arrayDeEmpleados[posicion - 1].nombre, 51);
+            strncpy(arrayDeEmployee[posicion].nombre , arrayDeEmployee[posicion - 1].nombre, 51);
             posicion--;
         }
-        strncpy(arrayDeEmpleados[posicion].nombre,auxDeNombreDelEmpleado,CANTIADDECARACTERESMAXIMOSPARANOMBRE);
+        strncpy(arrayDeEmployee[posicion].nombre,auxDeNombreDelEmployee,CANTIADDECARACTERESMAXIMOSPARANOMBRE);
     }
     return retorno;
 }
@@ -59,31 +59,31 @@ int Func_ordenamientoPorInsercionParaChar(Empleado arrayDeEmpleados[], int limit
 
 
 
-int Func_ordenamientoPorInsercionPorDosCriterios(Empleado arrayDeEmpleados[], int limite , int indice)
+int Func_ordenamientoPorInsercionPorDosCriterios(Employee arrayDeEmployee[], int limite , int indice)
 {
     int retorno = 0;
     int i;
-    char auxDeNombreDelEmpleado[51];
+    char auxDeNombreDelEmployee[51];
     int posicion;
     for ( i = indice ; i < limite ; i++)
     {
         posicion = i;
-        strncpy(auxDeNombreDelEmpleado , arrayDeEmpleados[i].nombre , CANTIADDECARACTERESMAXIMOSPARANOMBRE);
-        while( i > 0 && strcmp(auxDeNombreDelEmpleado , arrayDeEmpleados[posicion - 1].nombre)<0)
+        strncpy(auxDeNombreDelEmployee, arrayDeEmployee[i].nombre , CANTIADDECARACTERESMAXIMOSPARANOMBRE);
+        while( i > 0 && strcmp(auxDeNombreDelEmployee, arrayDeEmployee[posicion - 1].nombre)<0)
         {
-            strncpy(arrayDeEmpleados[posicion].nombre , arrayDeEmpleados[posicion - 1].nombre, 51);
+            strncpy(arrayDeEmployee[posicion].nombre , arrayDeEmployee[posicion - 1].nombre, 51);
 
-            if(strcmp(auxDeNombreDelEmpleado , arrayDeEmpleados[posicion - 1].nombre) == 0)
+            if(strcmp(auxDeNombreDelEmployee, arrayDeEmployee[posicion - 1].nombre) == 0)
             {
-                while(arrayDeEmpleados[posicion].sueldo < arrayDeEmpleados[posicion - 1].sueldo && strcmp(auxDeNombreDelEmpleado , arrayDeEmpleados[posicion - 1].nombre) == 0 )
+                while(arrayDeEmployee[posicion].sueldo < arrayDeEmployee[posicion - 1].sueldo && strcmp(auxDeNombreDelEmployee , arrayDeEmployee[posicion - 1].nombre) == 0 )
                 {
-                    strncpy(arrayDeEmpleados[posicion].nombre , arrayDeEmpleados[posicion - 1].nombre, 51);
+                    strncpy(arrayDeEmployee[posicion].nombre , arrayDeEmployee[posicion - 1].nombre, 51);
                     posicion--;
                 }
             }
 
         }
-        strncpy(arrayDeEmpleados[posicion].nombre,auxDeNombreDelEmpleado,CANTIADDECARACTERESMAXIMOSPARANOMBRE);
+        strncpy(arrayDeEmployee[posicion].nombre,auxDeNombreDelEmployee,CANTIADDECARACTERESMAXIMOSPARANOMBRE);
     }
     return retorno;
 }
