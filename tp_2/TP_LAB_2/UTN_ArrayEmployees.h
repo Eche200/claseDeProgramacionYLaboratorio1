@@ -18,11 +18,13 @@ typedef struct sEmployee
 
 
 int UTN_obtenerSiguienteId();
-int UTN_altaDeEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee);
-int UTN_inicializarArray(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee);
+int UTN_addEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee);
+int UTN_initEmployees(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee);
 int UTN_modificarEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee, int idDePersonaAModificar);
-int UTN_darDeBajaAEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee, int idDePersonaABorrar);
+int UTN_removeEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee, int idDePersonaABorrar);
 int UTN_imprimirTotalPromedioYEmployeeQueSuperanSalarioPromedio(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee, int indice);
-
+int UTN_sortEmployees(Employee arrayDeEmployee[], int limite , int indice);
+int printEmployees(Employee arrayDeEmployee[], int limite);
+int findEmployeeById(Employee arrayDeEmployee[], int limite,int id);
 
 #endif // UTN_ARRAYEMPLOYEES_H_INCLUDED
