@@ -1,5 +1,6 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
+#include <string.h>
 #include <ctype.h>
 #include "UTN_ArrayEmployees.h"
 #include "Funciones.h"
@@ -19,7 +20,7 @@
  */
 
 
-int UTN_imprimirTotalPromedioYEmployeeQueSuperanSalarioPromedio(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee, int indice)
+int UTN_imprimirTotalPromedioYEmployeeQueSuperanSalarioPromedio(Employee arrayDeEmployee[],  int limiteDeArrayDeEmployee, int indice)
 {
     int retorno = -1;
     int i;
@@ -29,7 +30,7 @@ int UTN_imprimirTotalPromedioYEmployeeQueSuperanSalarioPromedio(Employee arrayDe
     int contadorDeElementos = 0;
     if(arrayDeEmployee != NULL && limiteDeArrayDeEmployee > 0 && limiteDeArrayDeEmployee > indice && indice >= 0)
     {
-        for( i = 0 ; i < limiteDeArrayDeEmployee ; i++)
+        for( i = indice ; i < limiteDeArrayDeEmployee ; i++)
         {
             sumaTotalDeSalario = sumaTotalDeSalario + arrayDeEmployee[i].sueldo;
             contadorDeElementos ++;
@@ -66,13 +67,13 @@ int UTN_imprimirTotalPromedioYEmployeeQueSuperanSalarioPromedio(Employee arrayDe
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  */
 
-int UTN_removeEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee, int idDePersonaABorrar)
+int UTN_removeEmployee(Employee arrayDeEmployee[], int indice , int limiteDeArrayDeEmployee, int idDePersonaABorrar)
 {
     int retorno = -1;
     int i;
     if(arrayDeEmployee != NULL && limiteDeArrayDeEmployee > 0 && idDePersonaABorrar)
     {
-        for( i = 0; i < limiteDeArrayDeEmployee ; i++)
+        for( i = indice; i < limiteDeArrayDeEmployee ; i++)
         {
             if(arrayDeEmployee[i].id == idDePersonaABorrar && arrayDeEmployee[i].isEmpty == 0)
             {
@@ -100,14 +101,14 @@ int UTN_removeEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee, 
 
 
 
-int UTN_modificarEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee, int idDePersonaAModificar)
+int UTN_modificarEmployee(Employee arrayDeEmployee[],int indice , int limiteDeArrayDeEmployee, int idDePersonaAModificar)
 {
     int retorno = -1;
     int i;
     int opcionDeModificacion;
     if(arrayDeEmployee != NULL && limiteDeArrayDeEmployee > 0 && idDePersonaAModificar > 0)
     {
-        for( i = 0; i < limiteDeArrayDeEmployee ; i++)
+        for( i = indice; i < limiteDeArrayDeEmployee ; i++)
         {
             if(arrayDeEmployee[i].id == idDePersonaAModificar)
             {
@@ -163,14 +164,14 @@ int UTN_modificarEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmploye
  *
  */
 
-int UTN_initEmployees(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee)
+int UTN_initEmployees(Employee arrayDeEmployee[],int indice, int limiteDeArrayDeEmployee)
 {
     int retorno =-1;
     int i;
 
     if(arrayDeEmployee != NULL && limiteDeArrayDeEmployee > 0)
     {
-        for(i = 0; i < limiteDeArrayDeEmployee ; i++)
+        for(i = indice; i < limiteDeArrayDeEmployee ; i++)
         {
             arrayDeEmployee[i].isEmpty=1;
         }
@@ -180,7 +181,7 @@ int UTN_initEmployees(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee)
 }
 
 /** \brief esta funcion recibe por parametro un array y un limite
- *el array es donde se  haran las operaciones , y la cantidad maxima de  empleados que puedo almacenar
+ *el array es donde se  haran las operaciones , y el limite la cantidad maxima de  empleados que puedo almacenar
  *le pasaremos un nombre, apellido , saldo , sector ,  y daremos de alta un empleado y le pondremos un ID UNICO y pondremos que isEmpty es 0 porque esta lleno
  * \param Empleado arrayDeEmpleados[] es el  array que le paso como parametro
  * \param limiteDeArrayDeEmpleados cantidad maxima del array
@@ -188,40 +189,45 @@ int UTN_initEmployees(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee)
  *
  */
 
-FALTAN COSAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! traer datos!!!!!!!!!
-
-
-int UTN_addEmployee(Employee arrayDeEmployee[], int limiteDeArrayDeEmployee)
+int UTN_addEmployee(Employee arrayDeEmployee[],int indice ,int limiteDeArrayDeEmployee,int id, char* name,char*
+lastName,char* salary,char* sector)
 {
     int retorno = -1;
     int i;
 
     if(arrayDeEmployee != NULL && limiteDeArrayDeEmployee > 0)
     {
-        for( i = 0; i < limiteDeArrayDeEmployee ; i++)
+        for( i = indice; i < limiteDeArrayDeEmployee ; i++)
         {
             if(arrayDeEmployee[i].isEmpty == 1)
             {
                 printf("\ningrese nombre del empleado");
-               //hay que usar fget y usar strncpy
-                scanf("%s" , arrayDeEmployee[i].nombre);
-                printf("\ningrese apellido del empleado");
-               //hay que usar fget y usar strncpy
-                scanf("%s" , arrayDeEmployee[i].apellido);
+                if(utn_getString(name , CANTIDADPARABUFFER) == 0 && utn_isValidNombre(name , CANTIDADPARABUFFER) == 1 )
+                {
+                    printf("\ningrese apellido del empleado");
+                    if(utn_getString(lastName , CANTIDADPARABUFFER) == 0 && utn_isValidNombre(lastName , CANTIDADPARABUFFER) == 1)
+                    {
+                        printf("\ningrese el sueldo del empleado");
+                        if(utn_getString(salary,CANTIDADPARABUFFER) == 0 && utn_isValidFloat(salary , CANTIDADPARABUFFER) == 1)
+                        {
+                            printf("\ningrese sector del empleado");
+                            if(utn_getString(salary,CANTIDADPARABUFFER) == 0 && utn_isValidInt(sector ,CANTIDADPARABUFFER ) == 1)
+                            {
+                                arrayDeEmployee[i].id = id;
+                                arrayDeEmployee[i].isEmpty = 0;
+                                strncpy(arrayDeEmployee[i].nombre , name , 51);
+                                strncpy(arrayDeEmployee[i].nombre , lastName , 51);
+                                arrayDeEmployee[i].sueldo = atof(salary);
+                                arrayDeEmployee[i].sector = atoi(sector);
+                            }
 
-                printf("\ningrese el sueldo del empleado");
-               //hay que usar fget y usar strncpy
-                scanf("%f" , &arrayDeEmployee[i].sueldo);
+                        }
 
-                printf("\ningrese sector del empleado");
-               //hay que usar fget y usar strncpy
-                scanf("%d" , &arrayDeEmployee[i].sector);
+                    }
 
-                arrayDeEmployee[i].id = UTN_obtenerSiguienteId();
-                arrayDeEmployee[i].isEmpty = 0;
+                }
                 retorno = 0;
                 break;
-
             }
         }
     }
@@ -242,6 +248,18 @@ int  UTN_obtenerSiguienteId()
     return idEmpleado;
 }
 
+
+
+/** \brief esta funcion recibe por parametro un array , un limite y un indice
+ *el array es donde se  haran las operaciones , y el limite la cantidad maxima de  empleados que puedo almacenar
+ *pasaremos el array  y con ello le diremos donde empezar a ORDENAR hasta que punto , y  los ordenara de menor a mayor por nombre y si son iguales de nombres, entrara el
+ *segundo criterio que es el sector
+ * \param Empleado arrayDeEmpleados[] es el  array que le paso como parametro
+ * \param limiteDeArrayDeEmpleados cantidad maxima del array
+ *\param indice , de donde empezar a ordenar
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ *
+ */
 
 
 
@@ -276,17 +294,26 @@ int UTN_sortEmployees(Employee arrayDeEmployee[], int limite , int indice)
 
 
 
+/** \brief esta funcion recibe por parametro un array , indice y un limite
+ *el array es donde se  haran las operaciones , y el indice y el limite para saber de donde hasta donde recorrer
+ *pasaremos el array  y lo que haremos sera  imprimir desde el principio al limite para que  nos imprima  en forma de tabla todos los  contactos de un  array
+ * \param Empleado arrayDeEmpleados[] es el  array que le paso como parametro
+ * \param limiteDeArrayDeEmpleados cantidad maxima del array
+ *\param indice , de donde empezar a ordenar
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ *
+ */
 
 
 
-int printEmployees(Employee arrayDeEmployee[], int limite)
+int printEmployees(Employee arrayDeEmployee[], int indice ,  int limite )
 {
     int retorno = -1;
     int i;
 
     if(arrayDeEmployee != NULL && limite > 0 )
     {
-        for( i = 0 ; i < limite ; i++)
+        for( i = indice ; i < limite ; i++)
         {
             if( arrayDeEmployee[i].isEmpty == 0)
             {
@@ -303,7 +330,19 @@ int printEmployees(Employee arrayDeEmployee[], int limite)
     return retorno;
 }
 
-int findEmployeeById(Employee arrayDeEmployee[], int limite,int id)
+
+/** \brief esta funcion recibe por parametro un array , indice , un limite y id
+ *el array es donde se  haran las operaciones ,  el indice y el limite para saber de donde hasta donde recorrer y el ID es para saber a quien estabamos buscando
+ *pasaremos el array  y lo que haremos sera buscar desde el principio al limite el indice que le pasamos y nos devolvera la posicion del array donde esta
+ * \param Empleado arrayDeEmpleados[] es el  array que le paso como parametro
+ * \param limiteDeArrayDeEmpleados cantidad maxima del array
+ *\param indice , de donde empezar a ordenar
+ *\param id , es el id que pasaremos para saber en que posicion esta
+ * \return retornaremos el numero de la posicion donde esta la persona con ese ID dentro del array
+ *
+ */
+
+int findEmployeeById(Employee arrayDeEmployee[],int indice , int limite,int id)
 {
     int retorno = -1;
     int i;
