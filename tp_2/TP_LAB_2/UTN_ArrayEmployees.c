@@ -4,10 +4,6 @@
 #include <ctype.h>
 #include "UTN_ArrayEmployees.h"
 #include "Funciones.h"
-//funcion para señalar indices.
-//listar empleados
-
-
 
 /** \brief esta funcion recibe por parametro un array , un limiteDeArrayDeEmployee y un indice
  *el array es donde se  haran las operaciones , y la cantidad maxima de  empleados que puedo almacenar
@@ -105,50 +101,78 @@ int UTN_modificarEmployee(Employee arrayDeEmployee[],int indice , int limiteDeAr
 {
     int retorno = -1;
     int i;
+    char opcion[2];
     int opcionDeModificacion;
+    char bufferParaNombre[CANTIDADPARABUFFER];
+    char bufferParaApellido[CANTIDADPARABUFFER];
+    char bufferParaSueldo[CANTIDADPARABUFFER];
+    char bufferParaSector[CANTIDADPARABUFFER];
     if(arrayDeEmployee != NULL && limiteDeArrayDeEmployee > 0 && idDePersonaAModificar > 0)
     {
         for( i = indice; i < limiteDeArrayDeEmployee ; i++)
         {
-            if(arrayDeEmployee[i].id == idDePersonaAModificar)
+            if(arrayDeEmployee[i].id == idDePersonaAModificar && arrayDeEmployee[i].isEmpty == 0)
             {
                 printf("que dato desea modificar?\n1-Nombre.\n2-Apellido.\n3-Sueldo.\n4-Sector.");
-                scanf("%d", &opcionDeModificacion);
-
+                if(utn_getString(opcion,2) == 0 && utn_isValidInt(opcion ,2 ) == 1)
+                {
+                    opcionDeModificacion = atoi(opcion);
+                }
                 switch(opcionDeModificacion)
                 {
                 case 1:
                     printf("\ningrese el nuevo nombre del empleado");
-               //hay que usar fget y usar strncpy
-                    scanf("%s" , arrayDeEmployee[i].nombre);
-                    retorno = 0;
-                    break;
+                    if(utn_getString(bufferParaNombre , CANTIDADPARABUFFER) == 0 && utn_isValidNombre(bufferParaNombre , CANTIDADPARABUFFER) == 1 )
+                    {
+                        strncpy(arrayDeEmployee[i].nombre , bufferParaNombre , 51);
+                        retorno = 0;
+                        break;
+                    }else
+                    {
+                        printf("ERROR , NO ES UN NOMBRE VALIDO.\n\n\n");
+                        break;
+                    }
                 case 2:
                     printf("\ningrese el nuevo apellido del empleado");
-                    //hay que usar fget y usar strncpy
-                    scanf("%s" , arrayDeEmployee[i].apellido);
-                    retorno = 0;
-
-                    break;
+                    if(utn_getString(bufferParaApellido , CANTIDADPARABUFFER) == 0 && utn_isValidNombre(bufferParaApellido , CANTIDADPARABUFFER) == 1 )
+                    {
+                        strncpy(arrayDeEmployee[i].apellido , bufferParaApellido , 51);
+                        retorno = 0;
+                        break;
+                    }else
+                    {
+                        printf("ERROR , NO ES UN APELLIDO VALIDO.\n\n\n");
+                        break;
+                    }
                 case 3:
                     printf("\ningrese el nuevo sueldo del empleado");
-               //hay que usar fget y usar strncpy
-                    scanf("%f" , &arrayDeEmployee[i].sueldo);
-                    retorno = 0;
-                    break;
+                    if(utn_getString(bufferParaSueldo , CANTIDADPARABUFFER) == 0 && utn_isValidFloat(bufferParaSueldo , CANTIDADPARABUFFER) == 1 )
+                    {
+                        arrayDeEmployee[i].sueldo = atof(bufferParaSueldo);
+                        retorno = 0;
+                        break;
+                    }else
+                    {
+                        printf("ERROR , NO ES UN NUMERO DE SALARIO VALIDO.\n\n\n");
+                        break;
+                    }
                 case 4:
                     printf("\ningrese el nuevo sector del empleado");
-               //hay que usar fget y usar strncpy
-                    scanf("%d" , &arrayDeEmployee[i].sector);
-                    retorno = 0;
-                    break;
+                    if(utn_getString(bufferParaSector,CANTIDADPARABUFFER) == 0 && utn_isValidInt(bufferParaSector ,CANTIDADPARABUFFER ) == 1)
+                    {
+                        arrayDeEmployee[i].sector = atoi(bufferParaSector);
+                        retorno = 0;
+                        break;
+                    }else
+                    {
+                        printf("ERROR , NO ES UN NUMERO DE SALARIO VALIDO.\n\n\n");
+                        break;
+                    }
                 default:
                     printf("te equivocaste de opcion");
                     retorno = 0;
                     break;
                 }
-
-
             }
         }
     }
@@ -157,7 +181,8 @@ int UTN_modificarEmployee(Employee arrayDeEmployee[],int indice , int limiteDeAr
 
 /** \brief esta funcion recibe por parametro un array y un limite
  *el array es donde se  haran las operaciones , y la cantidad maxima de  empleados que puedo almacenar
- *inicializo todos  empleados del array poniendo el atributo .isEmpty en 1 para indicar  que esta vacio
+ *inicializo todos  empleados del array poniendo el atributo .isEmpty en 1 para indicar  que esta vacio tambien ponemos el ID en -1 , para que luego al dar de alta a un empleado
+ * podamos evaluar , no solo  si esta de baja sino que  jamas se cargara un dato en el , ya que no debemos borrar nunca a nadie , solo dar de baja.
  * \param Empleado arrayDeEmpleados[] es el  array que le paso como parametro
  * \param limiteDeArrayDeEmpleados cantidad maxima del array
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
@@ -174,6 +199,7 @@ int UTN_initEmployees(Employee arrayDeEmployee[],int indice, int limiteDeArrayDe
         for(i = indice; i < limiteDeArrayDeEmployee ; i++)
         {
             arrayDeEmployee[i].isEmpty=1;
+            arrayDeEmployee[i].id = -1;
         }
         retorno=0;
     }
@@ -183,6 +209,8 @@ int UTN_initEmployees(Employee arrayDeEmployee[],int indice, int limiteDeArrayDe
 /** \brief esta funcion recibe por parametro un array y un limite
  *el array es donde se  haran las operaciones , y el limite la cantidad maxima de  empleados que puedo almacenar
  *le pasaremos un nombre, apellido , saldo , sector ,  y daremos de alta un empleado y le pondremos un ID UNICO y pondremos que isEmpty es 0 porque esta lleno
+ *buscaremos que en el array haya un lugar donde el isEmpty este en 1 (osea vacio) pero tambien el ide sea -1 , ya que puede estar dado de baja , pero no hay que borrarlo
+ * sino que solo darlo de baja , por eso buscamos tambien el ID -1
  * \param Empleado arrayDeEmpleados[] es el  array que le paso como parametro
  * \param limiteDeArrayDeEmpleados cantidad maxima del array
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
@@ -199,7 +227,7 @@ lastName,char* salary,char* sector)
     {
         for( i = indice; i < limiteDeArrayDeEmployee ; i++)
         {
-            if(arrayDeEmployee[i].isEmpty == 1)
+            if(arrayDeEmployee[i].isEmpty == 1 && arrayDeEmployee[i].id == -1)
             {
                 printf("\ningrese nombre del empleado");
                 if(utn_getString(name , CANTIDADPARABUFFER) == 0 && utn_isValidNombre(name , CANTIDADPARABUFFER) == 1 )
