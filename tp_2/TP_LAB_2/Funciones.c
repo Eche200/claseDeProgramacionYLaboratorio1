@@ -102,6 +102,7 @@ int utn_getString(char* pBuffer, int limite)
         }
         strncpy(pBuffer,bufferStr,limite);
         retorno=0;
+
     }
     return retorno;
 }
@@ -157,7 +158,7 @@ int utn_isValidInt(char* pBuffer , int limite)
     if(pBuffer != NULL && limite > 0){
         retorno=1;
         for( i = 0 ; i < limite && pBuffer[i] != '\0'; i++){
-            if(pBuffer[i] < '0' || pBuffer[i] > '9'){
+            if(pBuffer[i] >= 'a' && pBuffer[i] <= 'z'){
                 retorno=0;
                 break;
             }
@@ -177,12 +178,7 @@ int utn_isValidFloat(char* pBuffer , int limite)
         retorno=1;
         for( i = 0 ; i < limite && pBuffer[i] != '\0'; i++)
         {
-            if(pBuffer[i] < '0' || pBuffer[i] > '9' || pBuffer[i] != ',')
-            {
-                retorno = 0;
-                break;
-            }
-            else if( pBuffer[i] == ',')
+            if( pBuffer[i] == '.')
             {
                 contadorDeComas++;
                 if(contadorDeComas > 1 )
@@ -191,6 +187,13 @@ int utn_isValidFloat(char* pBuffer , int limite)
                     break;
                 }
             }
+            else if(pBuffer[i] >='a' && pBuffer[i] <= 'z')
+            {
+                retorno = 0;
+                break;
+            }
+
+
         }
         if(contadorDeComas < 1)
         {

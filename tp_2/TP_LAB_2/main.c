@@ -39,7 +39,8 @@ int main()
                     printf("SE AGREGO CORRECTAMENTE  al empleado.\n\n");
                 }else
                 {
-                    printf("no se pudo agregar correctamente al empleado.\n\n");
+                    system("clear");
+                    printf("ERROR !,no se pudo agregar correctamente al empleado.\n\n");
                 }
                 break;
             }
@@ -51,14 +52,20 @@ int main()
 
 
         printf("Desea Continuar haciendo operaciones? <1 para si / cualquier numero para no>.\n");
-        if(utn_getString(continuarDelUsuario,2) == 0 && utn_isValidInt(continuarDelUsuario,2) == 1)
+
+        if(utn_getString(continuarDelUsuario,2) == 0 && utn_isValidInt(continuarDelUsuario,2) == 1 )
         {
             continuar = atoi(continuarDelUsuario);
 
+        }else
+        {
+            continuar = 3;
+
         }
         system("clear");
-        //getstring y invalidInt
     }while(continuar == 1);
+
+    printf("ADIOS , BUEN DIA\n\n\n");
 
 
     return 0;

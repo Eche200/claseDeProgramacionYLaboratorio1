@@ -229,34 +229,36 @@ lastName,char* salary,char* sector)
         {
             if(arrayDeEmployee[i].isEmpty == 1 && arrayDeEmployee[i].id == -1)
             {
-                printf("\ningrese nombre del empleado");
+                __fpurge(stdin);
+                printf("\ningrese nombre del empleado\n");
                 if(utn_getString(name , CANTIDADPARABUFFER) == 0 && utn_isValidNombre(name , CANTIDADPARABUFFER) == 1 )
                 {
-                    printf("\ningrese apellido del empleado");
-                    if(utn_getString(lastName , CANTIDADPARABUFFER) == 0 && utn_isValidNombre(lastName , CANTIDADPARABUFFER) == 1)
+                    __fpurge(stdin);
+                    printf("\ningrese apellido del empleado\n");
+                    if(utn_getString(lastName , 51) == 0 && utn_isValidNombre(lastName , CANTIDADPARABUFFER) == 1)
                     {
-                        printf("\ningrese el sueldo del empleado");
+                        __fpurge(stdin);
+                        printf("\ningrese el sueldo del empleado\n");
                         if(utn_getString(salary,CANTIDADPARABUFFER) == 0 && utn_isValidFloat(salary , CANTIDADPARABUFFER) == 1)
                         {
-                            printf("\ningrese sector del empleado");
-                            if(utn_getString(salary,CANTIDADPARABUFFER) == 0 && utn_isValidInt(sector ,CANTIDADPARABUFFER ) == 1)
+                            __fpurge(stdin);
+                            printf("\ningrese sector del empleado\n");
+                            if(utn_getString(sector,CANTIDADPARABUFFER) == 0 && utn_isValidInt(sector ,CANTIDADPARABUFFER ) == 1)
                             {
+                                __fpurge(stdin);
                                 arrayDeEmployee[i].id = id;
                                 arrayDeEmployee[i].isEmpty = 0;
-                                strncpy(arrayDeEmployee[i].nombre , name , 51);
-                                strncpy(arrayDeEmployee[i].nombre , lastName , 51);
+                                strncpy(arrayDeEmployee[i].nombre , name ,CANTIDADPARABUFFER);
+                                strncpy(arrayDeEmployee[i].apellido , lastName,CANTIDADPARABUFFER );
                                 arrayDeEmployee[i].sueldo = atof(salary);
                                 arrayDeEmployee[i].sector = atoi(sector);
+                                retorno = 0;
                             }
-
                         }
-
                     }
-
                 }
-                retorno = 0;
-                break;
             }
+            break;
         }
     }
     return retorno;
