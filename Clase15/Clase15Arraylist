@@ -58,8 +58,26 @@ a= (int*) malloc(sizeof(int));
 if (a != NULL){
 *a=22
 }
-**************************************************
 
+
+
+SI NO ES  NULL , nos reserva el espacio que le dijimos.
+
+otor ejemplo
+
+int * a;
+int i ;
+a=(int*) malloc (sizeof(int)*20);
+if(a != NULL){
+for(i=0;i<20;i++){
+*(a+i)=0;
+}
+}
+
+**************************************************
+REALLoC ,  si el tamaño del b loque original no puede  ser  redimensionado; entonces REALLOC  intentara asignar  un nuevo bloque d e memoria  y copiara el contenido anterior.
+
+  
 
 
   
