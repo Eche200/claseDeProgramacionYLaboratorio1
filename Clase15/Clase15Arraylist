@@ -77,9 +77,31 @@ for(i=0;i<20;i++){
 **************************************************
 REALLoC ,  si el tamaño del b loque original no puede  ser  redimensionado; entonces REALLOC  intentara asignar  un nuevo bloque d e memoria  y copiara el contenido anterior.
 
-  
 
+ejemplo realloc
 
+int*a;
+int * pAux;
+
+a= (int*) malloc (sizeof(int)*20);
+
+pAux = (int*) reallic(a, sizeof(int) * 200);
+
+if(pAux != NULL){
+
+a= pAux;
+}  
+
+*************************************************
+FREE  ; LIBERA ESPACIO DE MEMORIA!
+
+uso de free
+
+int* a;
+int* pAux;
+a=(int*)malloc(sizeof(int)*20);
+
+free(a);
   
 
 
