@@ -1,0 +1,69 @@
+clase 15 arrayList
+
+puntero tiene la direccion de memoria de otra cosa , pueden tener  diversos  tipos de datos.
+
+declaracion tipo* nombre;
+
+todos los  punteros deben estan inicializados en NULL
+
+int* punteroInt= NULL;
+int* punteroChar= NULL;
+int* punteroFloat= NULL;
+
+
+
+el puntero  y la variable comun , deben ser dle mismo tipo !!!!!!!!!!
+
+que puedo obtener de un puntero:
+direccion propia dle puntero
+el valor de un puntero 
+de la direccion que  esta  guardando puede obtener el valor
+
+
+
+airtmetica de punteros: depende el tipo d e puntero , cuando le  digo que se desplace , se dezplaza esa cantidad  de byte 
+
+
+
+
+punteros y estructuras. para acceder  a los campos  debemos usar la fecha -> no el . .
+ejemplo: puntero ->campo1 = 33;
+
+
+
+MEMORIA DINAMICA
+funciones basicas!!!!!!!!!! , MALLOC , REALLOC y FREE
+
+CUANDO SOLICITO UN ESPACIO QUEDA EN EL HEaP , SI NO LO LIBERO ; HASTA QUE NO CIERRA LA APP  ESE  ESPACIO QUEDA ABIERTO ; ENTONCES SIEMPRE HAY QUE LIBERAR
+
+
+/// SEGMENTO DE  CODIGO ; SE GUARDA LAS INSTRUCCIONES en LEAGUEJ MAQUINA en nuestor programa
+
+
+// SEGMENTO DE PILA , cada vez  que se  llama a una funcion entra en este segmento con toda  su ifnormacion  y alli se guardan , los llamados a funciones , etc 
+/// HEAP  ahi se  guarda  las  varaibles  que  se declararon dianmicamente
+
+
+**************************************************
+
+malloc  devuelve un puntero a  void , porque  dicho puntero puede s er  asignado a una variable   puntero de  cualquier  tipo mediante  una  conversion foraza de tipo de  datos(el que sea)
+
+void* malloc(int numBytes);
+
+**************************************************
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
