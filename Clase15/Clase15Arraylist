@@ -50,6 +50,14 @@ malloc  devuelve un puntero a  void , porque  dicho puntero puede s er  asignado
 
 void* malloc(int numBytes);
 
+
+
+
+int* a;
+a= (int*) malloc(sizeof(int));
+if (a != NULL){
+*a=22
+}
 **************************************************
 
 
