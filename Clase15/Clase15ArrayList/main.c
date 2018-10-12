@@ -5,6 +5,7 @@ int* newArrayDinamica(int size);
 int iniciarValores ( int* arrayIntDinamica, int size , int valor);
 int mostrarArray ( int* arrayIntDinamica, int size);
 int liberarMemoria ( int* arrayIntDinamica);
+int* reSizeArray(int* arrayInt , int size);
 
 
 int main()
@@ -21,9 +22,6 @@ int main()
         if(auxInt != NULL)
         {
             retorno= auxInt;
-
-
-
         }
         return retorno;
     }
@@ -41,7 +39,6 @@ int main()
             for(i = 0 ; i < size ; i++ )
             {
                 *(arrayIntDinamica+i) = valor;
-
             }
             retorno=0;
         }
@@ -67,14 +64,27 @@ int main()
     }
 
 
+
+    int* reSizeArray(int* arrayInt , int size)
+    {
+        int* retorno = NULL;
+
+        if(arrayInt != NULL && size >0)
+        {
+            retorno = realloc(arrayInt, size);
+        }
+        return retorno;
+    }
+
+
     int* arrayEnteros=NULL;
 
 
     newArrayDinamica(100);
 
+
     iniciarValores(arrayEnteros,100 , 133);
 
-    printf("\n\n\n%p" , arrayEnteros);
 
     mostrarArray(arrayEnteros,100);
 
