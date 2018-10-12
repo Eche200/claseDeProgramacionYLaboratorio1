@@ -101,7 +101,7 @@ int* a;
 int* pAux;
 a=(int*)malloc(sizeof(int)*20);
 
-free(a);
+free(a); 
   
 
 
@@ -113,5 +113,5 @@ free(a);
 
 
 
-
+ERROR DE EXAMEN  SI VMEOS ARRAYINT[i]=valor;  ESTA MAL no USAMOS [i] en dinamico!!!!!!!!!!!!!!!!
 
