@@ -1,14 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "Cliente.h"
 int main()
 {
+
+
+    Cliente arrayDinamicaDeClientes[50];
+
+
     /*
     id, first_name , last_name , is_empty
     1,Eric,Knight,False
     */
 
-    FILE* pArchivo;
+    //new , new con parametro , set getter
+
+   /* FILE* pArchivo;
     pArchivo=fopen("/home/alumno/archivoTexto.csv" , "r");
     char bufferId[4900];
     char bufferNombre[4900];
@@ -26,7 +33,7 @@ int main()
     else
     {
         printf("\nno existe el archivo!");
-    }
+    }*/
 
     return 0;
 }
