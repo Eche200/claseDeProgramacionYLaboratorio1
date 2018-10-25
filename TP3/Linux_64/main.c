@@ -18,16 +18,19 @@
     10. Salir
 *****************************************************/
 
-
+// aca debe haber , solo metodos y case
+//crear funcion que  haga ID automatico
 int main()
 {
+
     int option = 0;
     LinkedList* listaEmpleados = ll_newLinkedList();
     do{
-        switch(option)
+        switch(1)
         {
             case 1:
                 controller_loadFromText("data.csv",listaEmpleados);
+                option =10;
                 break;
         }
     }while(option != 10);
