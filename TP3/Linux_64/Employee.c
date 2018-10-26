@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -7,6 +5,7 @@
 #include "LinkedList.h"
 #include "parser.h"
 #include "Controller.h"
+#include "Funciones.h"
 
 Employee* Employee_new()
 {
@@ -133,3 +132,31 @@ int Employee_getSueldo(Employee* this,int* sueldo)
     return retorno;
 }
 
+
+
+
+
+
+
+//funcion que  compare si 2 objetos son iguales
+
+
+
+
+// ver las validaciones
+
+
+int  isValidNombre(Employee* this, char* nombre)
+{
+    int retorno=-1;
+
+    if(this != NULL && nombre != NULL )
+    {
+
+
+
+    }
+
+
+    return retorno;
+}

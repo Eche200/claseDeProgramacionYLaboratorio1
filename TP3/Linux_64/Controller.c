@@ -3,7 +3,7 @@
 #include "LinkedList.h"
 #include "Employee.h"
 #include "parser.h"
-
+#include "Funciones.h"
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
  *
  * \param path char*
@@ -11,15 +11,17 @@
  * \return int
  *
  */
+
+
+
+
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
-
     FILE* pArchivo;
     int retorno = -1;
     pArchivo = fopen(path,"r");
     if(!parser_EmployeeFromText(pArchivo,pArrayListEmployee))
     {
-
         retorno =0;
     }
     fclose(pArchivo);
@@ -81,9 +83,32 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_ListEmployee(LinkedList* pArrayListEmployee)
+int controller_ListEmployee(LinkedList* pArrayListEmployee, int len)
 {
-    return 1;
+    int retorno = -1;
+    int i ;
+    Employee* auxPunteroEmpleado;
+    char nombre[50];
+    int id;
+    int horasTrabajadas;
+    int sueldo;
+    if(pArrayListEmployee != NULL)
+    {
+        for(i = 0; i < len ; i++)
+        {
+            auxPunteroEmpleado=ll_get(pArrayListEmployee,i);
+            Employee_getNombre(auxPunteroEmpleado,nombre);
+            Employee_getSueldo(auxPunteroEmpleado,sueldo);
+            Employee_getHorasTrabajadas(auxPunteroEmpleado,horasTrabajadas);
+            Employee_getId(auxPunteroEmpleado,id);
+            printf("\n%d-%s-%d-%d",&id,nombre,&horasTrabajadas,&sueldo);
+
+
+
+            retorno=0;
+        }
+    }
+    return retorno;
 }
 
 /** \brief Ordenar empleados

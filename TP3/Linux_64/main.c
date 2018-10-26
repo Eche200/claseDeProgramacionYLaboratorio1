@@ -23,15 +23,18 @@
 int main()
 {
 
-    int option = 0;
+    int option = 1;
     LinkedList* listaEmpleados = ll_newLinkedList();
     do{
-        switch(1)
+        switch(option)
         {
             case 1:
                 controller_loadFromText("data.csv",listaEmpleados);
                 printf("size de la lista %d",ll_len(listaEmpleados));
-                option =10;
+
+                controller_ListEmployee(listaEmpleados,ll_len(listaEmpleados));
+
+                option =6;
                 break;
         }
     }while(option != 10);
