@@ -30,6 +30,7 @@ int main()
         {
             case 1:
                 controller_loadFromText("data.csv",listaEmpleados);
+                printf("size de la lista %d",ll_len(listaEmpleados));
                 option =10;
                 break;
         }

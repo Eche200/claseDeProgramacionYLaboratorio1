@@ -1,8 +1,12 @@
 
-#include "Employee.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Employee.h"
+#include "LinkedList.h"
+#include "parser.h"
+#include "Controller.h"
 
 Employee* Employee_new()
 {
@@ -16,16 +20,16 @@ void Employee_delete(Employee* this)
     free(this);
 }
 
-Employee* Employee_newConParametros(int id,char* nombre,int horasTrabajadas,int sueldo)
+Employee* Employee_newConParametros(char* id,char* nombre,char* horasTrabajadas,char* sueldo)
 {
     Employee* this;
     this=Employee_new();
 
     if(
-    !Employee_setId(this,id)&&
+    !Employee_setId(this,atoi(id))&&
     !Employee_setNombre(this,nombre)&&
-    !Employee_setHorasTrabajadas(this,horasTrabajadas)&&
-    !Employee_setSueldo(this,sueldo))
+    !Employee_setHorasTrabajadas(this,atoi(horasTrabajadas))&&
+    !Employee_setSueldo(this,atof(sueldo)))
         return this;
 
     Employee_delete(this);
