@@ -6,7 +6,7 @@
 
 /****************************************************
     Menu:
-     1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).
+     1. Cargar los datos de los empleados desde el archivo data.csv (modo texto). esta
      2. Cargar los datos de los empleados desde el archivo data.csv (modo binario).
      3. Alta de empleado
      4. Modificar datos de empleado
@@ -30,12 +30,21 @@ int main()
         {
             case 1:
                 controller_loadFromText("data.csv",listaEmpleados);
+               /* printf("size de la lista %d",ll_len(listaEmpleados));
+
+                controller_ListEmployee(listaEmpleados,ll_len(listaEmpleados));*/
+
+                option =2;
+                break;
+            case 2:
+                controller_saveAsText("data.csv",listaEmpleados);
+
                 printf("size de la lista %d",ll_len(listaEmpleados));
 
                 controller_ListEmployee(listaEmpleados,ll_len(listaEmpleados));
-
-                option =6;
+                option=10;
                 break;
+
         }
     }while(option != 10);
     return 0;
