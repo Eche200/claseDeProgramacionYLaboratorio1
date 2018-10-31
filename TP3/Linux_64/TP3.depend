@@ -53,39 +53,45 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1540509415 source:/home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Controller.c
+1540935692 source:/home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 	"parser.h"
+	"Funciones.h"
 
-1533133022 /home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/LinkedList.h
+1540935004 /home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/LinkedList.h
 
-1540508797 /home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Employee.h
+1540935004 /home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Employee.h
 
-1533133022 /home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/parser.h
+1540935004 /home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/parser.h
 
-1540505420 source:/home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Employee.c
-	"Employee.h"
+1540935004 source:/home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"Employee.h"
+	"LinkedList.h"
+	"parser.h"
+	"Controller.h"
+	"Funciones.h"
 
-1540509117 source:/home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/main.c
+1540935004 source:/home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Controller.h"
 	"Employee.h"
 
-1533133022 /home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Controller.h
+1540935004 /home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Controller.h
 
-1540509534 source:/home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/parser.c
+1540935004 source:/home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
+	"Controller.h"
 
 1540652074 source:/home/emmanuel/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Employee.c
 	<stdio.h>
@@ -120,4 +126,13 @@
 	"LinkedList.h"
 	"Employee.h"
 	"Controller.h"
+
+1540935004 /home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Funciones.h
+
+1540935004 source:/home/alumno/claseDeProgramacionYLaboratorio1/TP3/Linux_64/Funciones.C
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Funciones.h"
 

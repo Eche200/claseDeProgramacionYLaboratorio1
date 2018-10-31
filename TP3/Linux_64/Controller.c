@@ -98,9 +98,9 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee, int len)
         {
             auxPunteroEmpleado=ll_get(pArrayListEmployee,i);
             Employee_getNombre(auxPunteroEmpleado,nombre);
-            Employee_getSueldo(auxPunteroEmpleado,sueldo);
-            Employee_getHorasTrabajadas(auxPunteroEmpleado,horasTrabajadas);
-            Employee_getId(auxPunteroEmpleado,id);
+            Employee_getSueldo(auxPunteroEmpleado,&sueldo);
+            Employee_getHorasTrabajadas(auxPunteroEmpleado,&horasTrabajadas);
+            Employee_getId(auxPunteroEmpleado,&id);
             printf("\n%d-%s-%d-%d",id,nombre,horasTrabajadas,sueldo);
 
 
@@ -124,7 +124,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 }
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
- *
+ *recorrer la list a, y  escribirla en un archivo
  * \param path char*
  * \param pArrayListEmployee LinkedList*
  * \return int
@@ -132,19 +132,9 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
-    int retorno=-1;
 
-    FILE* pArchivo;
-    if(path !=NULL && pArrayListEmployee != NULL)
-    {
-        pArchivo=fopen(path,"a");
-        if(pArchivo!= NULL && (!parser_EmployeeFromText(pArchivo,pArrayListEmployee)))
-        {
-            retorno=0;
-        }
-    }
 
-    return retorno;
+    return 1;
 }
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
@@ -156,6 +146,31 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+    FILE* pArchivo;
+    int i;
+    int retorno= -1;
+    Employee* pEmpleado;
+    pArchivo=fopen(path,"wb");
+    if(pArchivo !=NULL)
+    {
+        for(i=0;i<ll_len(pArrayListEmployee);i++)
+        {
+            pEmpleado=ll_get(pArrayListEmployee,i);
+            fwrite(pEmpleado,sizeof(Employee),1,pArchivo);
+        }
+        retorno=0;
+    }
+    return retorno;
 }
 
+/*
+funcion next , primer nodo , siguiente  , file. preguntar  yo le cambio valor a  i , y le doy del anterior , y  que busque el que sigue
+*/
+
+//VER DONDE MEIRDA ESTA ESTO
+/*int retorno=-1;
+    FILE* pArchivo;
+    pArchivo=fOpen(path,"rb");
+    retorno= parser_EmployeeFromBinary(pArchivo,pArrayListEmployee);
+    fclose(pArchivo);
+    return retorno;*/

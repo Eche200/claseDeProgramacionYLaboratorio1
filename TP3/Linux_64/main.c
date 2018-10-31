@@ -30,11 +30,11 @@ int main()
         {
             case 1:
                 controller_loadFromText("data.csv",listaEmpleados);
-               /* printf("size de la lista %d",ll_len(listaEmpleados));
+                //printf("size de la lista %d",ll_len(listaEmpleados));
 
-                controller_ListEmployee(listaEmpleados,ll_len(listaEmpleados));*/
+                //controller_ListEmployee(listaEmpleados,ll_len(listaEmpleados));
 
-                option =2;
+                option =3;
                 break;
             case 2:
                 controller_saveAsText("data.csv",listaEmpleados);
@@ -44,8 +44,14 @@ int main()
                 controller_ListEmployee(listaEmpleados,ll_len(listaEmpleados));
                 option=10;
                 break;
+            case 3:
+                controller_saveAsBinary("data.bin",listaEmpleados);
+                option=10;
+                break;
 
         }
     }while(option != 10);
     return 0;
 }
+
+
